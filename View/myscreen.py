@@ -2,13 +2,12 @@ import os
 
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
-
-from kivymd.uix.screen import MDScreen
+from kivy.uix.screenmanager import Screen
 
 from Utility.observer import Observer
 
 
-class MyScreenView(MDScreen, Observer):
+class MyScreenView(Screen, Observer):
     """"
     A class that implements the visual presentation `MyScreenModel`.
 

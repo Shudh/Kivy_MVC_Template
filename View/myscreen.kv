@@ -1,33 +1,29 @@
-<MyField@MDTextFieldRect>
+<MyField@TextInput>
     size_hint: None, None
     size: "100dp", "32dp"
     input_filter: "int"
     pos_hint: {"center_y": .5}
 
 
-<MyLabel@MDLabel>
+<MyLabel@Label>
     pos_hint: {"center_y": .5}
 
 
 <MyScreenView>
 
-    MDBoxLayout:
+    BoxLayout:
         orientation: "vertical"
-        adaptive_size: True
         spacing: "12dp"
         padding: "12dp"
-        radius: [10, ]
         pos_hint: {"center_x": .5, "center_y": .5}
-        md_bg_color: app.theme_cls.disabled_hint_text_color
+        background_color: 0.9, 0.9, 0.9, 1
 
-        MDLabel:
+        Label:
             text: "Calculate two numbers:"
-            font_style: "H6"
             pos_hint: {"center_x": .5}
-            adaptive_size: True
 
-        MDBoxLayout:
-            adaptive_size: True
+
+        BoxLayout:
             spacing: "12dp"
 
             MyField:
@@ -37,7 +33,7 @@
 
             MyLabel:
                 text: "+"
-                adaptive_size: True
+
 
             MyField:
                 id: number_2
@@ -46,7 +42,7 @@
 
             MyLabel:
                 text: "="
-                adaptive_size: True
+
 
             MyField:
                 id: result

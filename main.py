@@ -1,10 +1,10 @@
-from kivymd.app import MDApp
+from kivy.app import App
 
 from Controller.myscreen import MyScreenController
 from Model.myscreen import MyScreenModel
 
 
-class TextMVC(MDApp):
+class TextMVC(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.model = MyScreenModel()
