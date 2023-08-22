@@ -1,0 +1,46 @@
+<DataScreenView>
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "12dp"
+        padding: "12dp"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        background_color: 0.9, 0.9, 0.9, 1
+
+        Label:
+            text: "Select Date Range"
+            pos_hint: {"center_x": .5}
+            size_hint_y: 0.1
+
+        BoxLayout:
+            spacing: "12dp"
+            size_hint_y: 0.2
+
+            TextInput:
+                id: from_date_input
+                hint_text: "From Date (YYYY-MM-DD)"
+                text:"2023-07-27"
+
+            TextInput:
+                id: to_date_input
+                hint_text: "To Date (YYYY-MM-DD)"
+                text:"2023-07-28"
+
+        Button:
+            text: "Submit"
+            on_press: root.set_dates()
+            size_hint_y: 0.1
+
+        BoxLayout:
+            id: result_grid
+            # This BoxLayout will contain the dynamically added DataFrameWidget
+            size_hint_y: 0.4
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            Button:
+                text: "Previous"
+                on_press: root.ids.result_grid.children[0].prev_page()  # Access the DataFrameWidget and call prev_page
+            Button:
+                text: "Next"
+                on_press: root.ids.result_grid.children[0].next_page()  # Access the DataFrameWidget and call next_page
